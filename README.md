@@ -1,1 +1,1 @@
-# our porject: Mohammadjavaad.Ka and sajjad.Ma
+# our team: Mohammadjavaad.Ka and sajjad.Ma
