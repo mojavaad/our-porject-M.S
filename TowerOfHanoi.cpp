@@ -3,19 +3,19 @@
 using namespace std;
 
 
-void hanoi(int nDisk, char start, char temp, char finish)
+void hanoi(int NumDisk, char start, char temp, char finish)
 {
 
-    if (nDisk == 1)
+    if (NumDisk == 1)
         cout << start << " -> " << finish << endl;
 
     else 
     {
-        hanoi(nDisk - 1, start, finish, temp);
+        hanoi(NumDisk - 1, start, finish, temp);
 
         cout << start << " -> " << finish << endl;
 
-        hanoi(nDisk - 1, temp, start, finish);
+        hanoi(NumDisk - 1, temp, start, finish);
     }
 
 }
