@@ -18,8 +18,9 @@ int main()
 
             if (a != 0)
             {
-                ARR[c][0] = i;
-                ARR[c][1] = j;
+                //index of array starts from 0 but index of marix strarts from 1 so... 
+                ARR[c][0] = i+1;
+                ARR[c][1] = j+1;
                 ARR[c][2] = a;
                 c++;
             }
