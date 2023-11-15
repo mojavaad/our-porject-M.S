@@ -49,11 +49,7 @@ int main()
             break;
         case 6:
             reverseQ();
-            for (int i = 0; i < Count; i++)
-            {
-
-            }
-            
+            //for (int i = 0; i < Count; i++)
             break;
         default:
             cout << "\nerror! try again." << endl;
