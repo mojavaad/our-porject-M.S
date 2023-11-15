@@ -107,7 +107,7 @@ bool isempty()
 
 bool isfull()
 {
-    if (r == 6)
+    if (r + 1 == 6)
         return true;
     else
         return false;
