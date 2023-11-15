@@ -27,6 +27,10 @@ int main()
         switch (a)
         {
         case 1:
+            cout << "enter index: ";
+            cin >> index;
+            cout << "enter object: ";
+            cin >> object;
             int Insert(int object, int index);
             cout << "enter the command number: " << endl;
             cin >> a;
@@ -57,7 +61,11 @@ int main()
             exit(0);
         }
 }
-
+//method num 1
+int Insert(int object , int index, int Arr[])
+{
+    Arr[index] = object;
+}
 //method num 2
 int Delete(int index, int n, int Arr[])
 {
