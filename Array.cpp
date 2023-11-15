@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+int Insert(int, int, int [])
 int Delete(int, int, int []);
 int Find(int, int, int []);
 
