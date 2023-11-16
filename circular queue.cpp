@@ -10,7 +10,7 @@ bool isempty();
 bool isfull(int);
 int* reverseQ(int);
 
-int f = -1, r = 0;
+int f = 0, r = 0;
 int arr[50], x;
 int Count = 0;
 int Max;//maxsize of queue
@@ -66,14 +66,13 @@ int enqueue(int var, int Max)
     if (isfull(Max) == true)
         return 1;
     r++;
-    if (r == Max)
-        r = r % Max + 1;
+    r = r % Max;
     arr[r] = var;
 
     cout << "\nr is: " << r << endl;
     cout << "\nf is: " << f << endl;
     Count++;
-    cout << Count << endl;
+    cout << "\nCount: " << Count << endl;
     return 0;
 }
 
@@ -83,8 +82,7 @@ int dequeue(int Max)
         return 0;
     
     f++;
-    if (f == Max)
-        f = f % Max + 1;
+    f = f % Max;
 
     cout << "\nr is: " << r << endl;
     cout << "\nf is: " << f << endl;
@@ -96,12 +94,16 @@ int dequeue(int Max)
 
 int peek()
 {
+    if (f + 1 == Max)
+    {
+        return arr[0];
+    } 
     return arr[f + 1];
 }
 
 bool isempty()
 {
-    if (r == f+1)
+    if (r == f)
         return true;
     else
         return false;
@@ -117,33 +119,33 @@ bool isfull(int Max)
 
 int* reverseQ(int Max)
 {
-    int* ptr;
     int j = 0;
     int k = 0;
     for (int i = 0; i < (Count / 2); i++)
     {
         cout << "\nr is: " << r << endl;
         cout << "\nf is: " << f << endl;
-        if (r - i< 1)
-            j = Max - 1;
-        if (f + i + 1 == Max)
-            k = Max - 1;
-        int a = arr[f + i + 1 - k];
-        arr[f + i + 1 - k] = arr[r - i + j];
+        if (r - i < 0)
+            j = Max;
+        if (f + 1 + i == Max)
+            k = Max;
+        int a = arr[f + 1 + i - k];
+        cout << " | " << a;
+        arr[f + 1 + i - k] = arr[r - i + j];
+        cout << " | " << arr[r - i + j];
         arr[r - i + j] = a;
-    }
-    cout << Count << "\n\n\n" << endl;
-    j = f;
-    for (int i = 0; i < Count; i++)
-    {
-        cout << arr[j++] << " ";
-        if (j == Max)
-        {
-            j = j % Max;
-            j++;
-        }
+        int b = 0;
+
+        b++;
+        cout << "\ncounter is: " << b << endl;
         
     }
-    ptr = &arr[0];
-    return ptr;
+    cout << Count << "\n\n\n" << endl;
+    j = f + 1;
+    for (int i = 0; i < Count; i++)
+    {
+        j = j % (Max);
+        cout << arr[j++] << " ";
+    }
+    return 0;
 }
