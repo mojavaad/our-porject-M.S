@@ -12,13 +12,16 @@ int push(int var)
 }
 int pop()
 {
-
-	return 0;
+	if (isempty() == true)
+		return 0;
+	top--;
+	return stack[top + 1];
 }
 int peek()
 {
-
-	return 0;
+	if (top == -1)
+		return 0;
+	return stack[top];
 }
 bool isempty()
 {
