@@ -49,8 +49,21 @@ void enqueue(int var)
 }
 int dequeue()
 {
-    //insert your code.
-	return stack[top];
+	int len = top;
+	for (int i = 0; i < len; i++)
+	{
+		var = pop();
+		push2(var);
+	}
+
+	int value = pop();//top == 0 -> first element pop
+
+	for (int i = 0; i < len; i++)
+	{
+		var = pop2();
+		push(var);
+	}
+	return value;
 }
 
 
