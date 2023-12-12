@@ -141,23 +141,59 @@ int removeNodeAtIndex(int index)
 
 int removeNodeAtEnd()
 {
-    return 0;
+    int data;
+
+    for (node* p = head; p != NULL; p->next)
+    {
+        if (p->next->next == NULL)
+        {
+            data = p->next->data;
+
+            p->next = NULL;
+            return data;
+        }
+    }
 }
 
 int removeNodeAtBegin()
 {
-    return 0;
+    int data;
+    data = head->data;
+    head = head->next;
+    return data;
 }
 
 int sizeOfList()
 {
-    return 0;
+    int i = 0;
+    for (node* temp = head; temp != NULL; temp->next)
+        i++;
+
+    return i;
 }
 
 void concatenate(node* headTwo)
 {
+    for (node* p = head; p != NULL; p->next)
+    {
+        if (p->next == NULL)
+            p->next = headTwo;
+    }
 }
 
 void invert()
 {
+    node* temp = head;
+    node* prev = NULL, * next = NULL;
+
+    while (temp != NULL)
+    {
+        next = temp->next;
+
+        temp->next = prev;
+
+        prev = temp;
+        temp = next;
+    }
+    head = prev;
 }
