@@ -101,12 +101,15 @@ void enqueue(int data)
 
 int dequeue()
 {
-    return 0;
+    int data;
+    data = removeNodeAtBegin();
+    return data;
 }
-
 int peek()
 {
-    return 0;
+    if (head == NULL)
+        return NULL;
+    return head->data;
 }
 
 void reverse()
@@ -116,5 +119,7 @@ void reverse()
 
 bool isEmpty()
 {
-    return true;
+    if (sizeOfList() == 0)
+        return true;
+    return false;
 }
