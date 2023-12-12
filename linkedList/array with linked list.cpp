@@ -131,6 +131,28 @@ int main()
 
 }
 
+void insert(int index, int data)
+{
+    if (index == 0)
+        insertAtBegin(data);
+    else if (index > 0 && index < sizeOfList())
+        insertAtIndex(data, index);
+    else if (index == sizeOfList())
+        insertAtEnd(data);
+}
+
+int Delete(int index)
+{
+    int data;
+    if (index == 0)
+        data = removeNodeAtBegin();
+    else if (index > 0 && index < sizeOfList())
+        data = removeNodeAtIndex(index);
+    else if (index == sizeOfList())
+        data = removeNodeAtEnd();
+    return data;
+}
+
 int find(int data)
 {
     int i = 0;
