@@ -92,15 +92,21 @@ void push(int data)
 
 int pop()
 {
-    return 0;
+    int data;
+    data = removeNodeAtEnd();
+    return data;
 }
 
 bool isEmpty()
 {
-    return true;
+    if (sizeOfList() == 0)
+        return true;
+    return false;
 }
 
 int peek()
 {
-    return 0;
+    if (head == NULL)
+        return NULL;
+    return head->data;
 }
