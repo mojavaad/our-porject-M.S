@@ -72,18 +72,68 @@ int main()
 
 void insertAtIndex(int data, int index)
 {
+    int i = 1;
+
+    node* p = head;
+    p = p->key;
+
+    node* temp1 = NULL;
+
+    node* mainTemp = NULL;
+    mainTemp->data = data;
+
+    do
+    {
+        if (i == index)
+        {
+            temp1->key = p->key;
+            p->key = mainTemp;
+            mainTemp->key = temp1->key;
+            break;
+        }
+        i++;
+        p = p->key;
+    } while (p->key != head);
 }
 
 void insertAtEnd(int data)
 {
+    node* p = head;
+    node* temp = NULL;
+    temp->data = data;
+    do
+    {
+        if (p->key == head)
+        {
+            p->key = temp;
+            temp->key = head;
+        }
+        p = p->key;
+    } while (p != head);
 }
 
 void insertAtBegin(int data)
 {
+    node* temp = NULL;
+    temp->data = data;
+    temp->key = head;
+    head = temp;
 }
 
 void updateNode(int data, int index)
 {
+
+    if (index >= sizeOfList())
+        return;
+    int i = 0;
+    node* p = head;
+    do
+    {
+        if (index == i)
+            p->data = data;
+        i++;
+        p->key;
+    } while (p != head);
 }
 
 int removeNodeAtIndex(int index)
